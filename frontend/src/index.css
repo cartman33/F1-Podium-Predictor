@@ -1,0 +1,111 @@
+/* Tailwind CSS 4.0 Core */
+@import 'tailwindcss';
+
+@theme {
+  /* Fonts */
+  --font-display-lg: "Archivo Narrow", sans-serif;
+  --font-body-lg: "Hanken Grotesk", sans-serif;
+  --font-headline-md: "Archivo Narrow", sans-serif;
+  --font-headline-lg-mobile: "Archivo Narrow", sans-serif;
+  --font-label-md: "JetBrains Mono", monospace;
+  --font-body-md: "Hanken Grotesk", sans-serif;
+  --font-headline-lg: "Archivo Narrow", sans-serif;
+  --font-label-sm: "JetBrains Mono", monospace;
+  --font-stats-number: "Archivo Narrow", sans-serif;
+
+  /* Colors */
+  --color-carbon-black: #08080C;
+  --color-track-grey: #2A2A32;
+  --color-status-error: #FF1801;
+  --color-status-live: #00D2BE;
+  --color-status-pending: #FFB800;
+  --color-primary-container: #FF1801;
+  --color-web3-metamask: #F6851B;
+  --color-f1-white: #FFFFFF;
+  --color-on-background: #FFFFFF;
+  --color-on-surface-variant: #A0A0B0;
+  --color-outline-variant: #38383F;
+
+  /* Layout Variables - Optimized for 1920x1080 */
+  --width-container-max: 1600px;
+  --spacing-gutter: 2.5rem;
+  --spacing-margin-desktop: 6rem;
+  --spacing-margin-mobile: 1.5rem;
+}
+
+@layer base {
+  body {
+    background-color: #08080C;
+    background-color: var(--color-carbon-black);
+    color: var(--color-f1-white);
+    font-family: var(--font-body-md);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .f1-gradient-text {
+    background: linear-gradient(135deg, #FFFFFF 0%, #A0A0B0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-panel {
+    background: linear-gradient(145deg, rgba(25, 25, 35, 0.7) 0%, rgba(10, 10, 15, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .hero-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 24, 1, 0.15) 0%, transparent 70%);
+  }
+
+  .carbon-texture {
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 3px);
+  }
+  
+  .bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  
+  .glow-active {
+    box-shadow: 0 0 30px rgba(255, 24, 1, 0.2);
+  }
+
+  .jackpot-card {
+    background: linear-gradient(180deg, rgba(21, 21, 30, 0.8) 0%, rgba(10, 10, 15, 0.95) 100%);
+    border: 1px solid rgba(255, 24, 1, 0.3);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  @keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A32;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38383F;
+}
+
